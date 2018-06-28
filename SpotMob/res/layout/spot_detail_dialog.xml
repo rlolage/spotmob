@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ececec" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ececec"
+        android:orientation="vertical"
+        android:paddingBottom="13dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="13dp"
+        android:scrollbars="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <!--
+             <RatingBar
+            android:id="@+id/userRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false" />
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:paddingBottom="13dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="13dp" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_navigate" />
+
+            <TextView
+                android:id="@+id/getDirectionsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip"
+                android:clickable="true"
+                android:text="Show Directions to Spot!" />
+        </LinearLayout>
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:padding="15dip"
+            android:background="#FFFFFF"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/spotDescriptionLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spot Description"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00baff"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/categoryImageView"
+                    android:layout_width="48dip"
+                    android:layout_height="48dip" 
+                    
+                    />
+
+                <TextView
+                    android:id="@+id/itemDescriptionTextView"
+                    style="@style/SpotDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/locationLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textAppearance="?android:attr/textAppearanceSmall" 
+               android:textColor="#00baff"
+                android:textStyle="bold"                />
+
+                <TextView
+                    android:id="@+id/locationTextView"
+                    style="@style/SpotDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/directionsLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Directions"
+                    android:textAppearance="?android:attr/textAppearanceSmall" 
+               android:textColor="#00baff"
+                android:textStyle="bold"                />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                     >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_action_navigate" />
+
+                    <TextView
+                        android:id="@+id/getDirectionsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dip"
+                        android:clickable="true"
+                        android:text="Tap Here" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/detailsLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Details"
+                    android:textAppearance="?android:attr/textAppearanceSmall" 
+               android:textColor="#00baff"
+                android:textStyle="bold"                />
+
+                <TextView
+                    android:id="@+id/priceTextView"
+                    style="@style/SpotDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/sellerRatingLabelTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seller Rating"
+                    android:textAppearance="?android:attr/textAppearanceSmall" 
+               android:textColor="#00baff"
+                android:textStyle="bold"                />
+
+                <RatingBar
+                    android:id="@+id/userRatingBar"
+                    style="@style/userRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:isIndicator="true" />
+
+                <TextView
+                    android:id="@+id/messageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF0000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:background="#ffffff"
+            android:layout_margin="5dip"
+            
+            >
+
+            <TextView
+                android:id="@+id/readyToBidLabelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"
+                android:text="Ready to Bid?"
+                android:textAppearance="?android:attr/textAppearanceSmall" 
+               android:textColor="#00baff"
+                android:textStyle="bold"                />
+
+            <EditText
+                android:id="@+id/bid_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Bid Price"
+                android:inputType="numberDecimal" 
+                           android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+                />
+
+            <EditText
+                android:id="@+id/user_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="User Description"
+                android:inputType="textMultiLine" 
+                           android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+                >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/bidButton"
+                style="@style/ButtonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_selector"
+                android:text="Bid for Spot" 
+                            android:padding="10dip"
+                
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

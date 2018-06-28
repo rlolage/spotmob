@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+/Development/spotmob_workspace/.metadata/.plugins/org.eclipse.jdt.core
+1942091068.index
+2928968343.index
+1210609376.index
+1295041583.index
+743128885.index

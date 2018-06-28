@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
+		<item value="0" key="sort"/>
+		<item value="false" key="allPersp"/>
+		<list key="bounds">
+			<item value="529"/>
+			<item value="44"/>
+			<item value="622"/>
+			<item value="448"/>
+		</list>
+		<list key="columns">
+			<item value="199"/>
+			<item value="399"/>
+		</list>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="122" key="DIALOG_Y_ORIGIN"/>
+		<item value="531" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ShowViewDialog">
+		<item value="308" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.egit.ui.RepositoriesView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="206" key="DIALOG_Y_ORIGIN"/>
+		<item value="415" key="DIALOG_HEIGHT"/>
+		<item value="686" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.egit.ui.GitCategory"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="com.android.ide.eclipse.adt.project.ExportWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="com.android.ide.eclipse.wizards.category"/>
+		</list>
+	</section>
+</section>

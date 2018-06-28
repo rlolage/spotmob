@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="165" key="DIALOG_Y_ORIGIN"/>
+		<item value="521" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="ShowDerived"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/datamodel/Bid.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/spinner_item.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/my_items_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/bids_by_item_list_row.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/login.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/seller_spots_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/main.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/sellaspot_dialog.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/rate_seller_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/bids_by_item_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/bid_detail_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/rate_bidder_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/bid_status.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/register.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/GCMIntentService.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/datamodel/RegisterUser.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/AndroidManifest.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/datamodel/UserDetailResponse.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/menu/main.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/about_dialog.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/my_bids_layout.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/spot_detail_dialog.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/MyItemsFragment.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/SpotsFragment.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/drawable/button_selector.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/values/styles.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/values-v11/styles.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/datamodel/RESTData.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/MainActivity.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/my_profile.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/LoginActivity.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/RegisterActivity.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/list_row.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/my_bids_list_row.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/res/layout/my_items_list_row.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/SpotMob/src/com/sellaspot/MyBidsFragment.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="146" key="DIALOG_Y_ORIGIN"/>
+			<item value="540" key="DIALOG_X_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="266" key="DIALOG_Y_ORIGIN"/>
+		<item value="598" key="DIALOG_X_ORIGIN"/>
+		<item value="354" key="DIALOG_HEIGHT"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+</section>

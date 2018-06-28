@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/ratingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bidder Rating"
+             android:textAppearance="?android:attr/textAppearanceSmall" 
+         android:textColor="#00baff"
+                android:textStyle="bold"              />
+
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            style="@style/userRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:isIndicator="true" />
+
+        <TextView
+            android:id="@+id/commentsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+         android:textColor="#00baff"
+                android:textStyle="bold"              />
+
+        <TextView
+            android:id="@+id/comments"
+            style="@style/SpotDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_edit_text"
+            android:text=""
+            android:padding="10dip"
+            />
+
+        <Button
+            android:id="@+id/acceptBidButton"
+            style="@style/ButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="Accept Bid!" />
+    </LinearLayout>
+
+</LinearLayout>

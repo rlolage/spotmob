@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;registerActivity&apos; in &apos;com.sellaspot.MyProfileActivity&apos; to &apos;myProfileActivity&apos;&#x0A;- Original project: &apos;SpotMob&apos;&#x0A;- Original element: &apos;com.sellaspot.MyProfileActivity.registerActivity&apos;&#x0A;- Renamed element: &apos;com.sellaspot.MyProfileActivity.myProfileActivity&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;registerActivity&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.sellaspot{MyProfileActivity.java[MyProfileActivity^registerActivity" name="myProfileActivity" references="true" setter="false" stamp="1370676053270" textual="false" version="1.0"/>
+</session>

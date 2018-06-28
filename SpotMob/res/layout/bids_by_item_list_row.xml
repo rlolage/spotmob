@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <!-- ListRow Left sied Thumbnail image -->
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip"
+        android:padding="7dip" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="6dip"
+             />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/bottomtext"
+        android:orientation="vertical" 
+        android:padding="7dip"
+        >
+    <TextView
+        android:id="@+id/toptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_weight="1"
+        android:textColor="#00baff"
+                    android:textSize="16dip"
+                    android:textStyle="bold"  />
+
+    <TextView
+        android:id="@+id/bidderDescriptionLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Bidder Description"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/bottomtext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toptext"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_weight="1"
+        android:ellipsize="marquee" />
+
+    <TextView
+        android:id="@+id/bidderRatingLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Bidder Rating"
+        android:textAppearance="?android:attr/textAppearanceSmall" 
+        android:textStyle="bold"
+        />
+
+        <RatingBar
+            android:id="@+id/customUserRating"
+            style="@style/userRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:isIndicator="true" />
+        </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/spotmobRegisterLabletextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update My Profile"
+            android:textColor="#00baff"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="Last Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="First Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress" />
+
+<!--         <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="@string/confirm_password_hint"
+            android:inputType="textPassword" /> -->
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:inputType="textPassword" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/confirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="@string/phone_hint"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="City" />
+
+        <EditText
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="State"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/zipCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="Zip Code"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+            android:ems="10"
+            android:hint="Country"
+            android:inputType="textPersonName" />
+                
+        <CheckBox
+            android:id="@+id/notificationCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Notifications" />
+
+        <Button
+            android:id="@+id/updateButton"
+            style="@style/SmallButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_selector"
+            android:text="Update Profile" />
+    </LinearLayout>
+
+</ScrollView>

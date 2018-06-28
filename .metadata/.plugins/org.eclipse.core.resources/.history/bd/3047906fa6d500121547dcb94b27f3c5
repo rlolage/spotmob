@@ -1,0 +1,5 @@
+package com.sellaspot.datamodel;
+
+public class UpdateUserRequest {
+
+}

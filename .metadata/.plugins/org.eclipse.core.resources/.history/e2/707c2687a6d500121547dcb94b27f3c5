@@ -1,0 +1,31 @@
+package com.sellaspot.datamodel;
+
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
+
+@Root(name = "UpdateUserRequest", strict = false)
+public class UpdateUserRequest {
+
+	@Element(required=false)
+	private String email;
+	@Element(required=false)
+	private String phone;
+	@Element(required=false)
+	private String city;
+	@Element(required=false)
+	private String state;
+	@Element(required=false)
+	private String country;
+	@Element(required=false)
+	private int zip;
+	@Element(required=false)
+	private String firstname;
+	@Element(required=false)
+	private String lastname;
+	@Element(required=false)
+	private String status;
+	@Element(required=false)
+	private String reason;
+	@Element(required=false)
+	private int notification;
+}

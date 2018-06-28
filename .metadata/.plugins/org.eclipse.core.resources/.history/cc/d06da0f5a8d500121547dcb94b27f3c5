@@ -1,0 +1,100 @@
+package com.sellaspot;
+
+import android.app.ActionBar;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.sellaspot.datamodel.RESTData;
+import com.sellaspot.datamodel.UserDetailResponse;
+import com.sellaspot.db.DBSession;
+
+public class MyProfileActivity extends Activity {
+	
+	MyProfileActivity myProfileActivity;
+	String city;
+	String state;
+	String country;
+	
+	String userId;
+	String sessionId;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy); 
+		
+		setContentView(R.layout.my_profile);
+		setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		myProfileActivity = this;
+		
+		ActionBar actionbar = getActionBar();
+        
+        Drawable d=getResources().getDrawable(R.drawable.banner);
+        //actionbar.setBackgroundDrawable(d);
+        actionbar.setTitle("");
+        actionbar.setIcon(d);
+
+		DBSession session = new DBSession(this);
+		
+		this.userId = session.getUserId();
+		this.sessionId = session.getSessionId();
+
+		UserDetailResponse userDetailResponse = RESTData.getUserDetails(this.userId, this.sessionId, this.userId);
+        
+    	TextView lastNameTextView = (TextView)myProfileActivity.findViewById(R.id.lastName);
+    	TextView firstNameTextView = (TextView)myProfileActivity.findViewById(R.id.firstName);
+    	TextView cityTextView = (TextView)myProfileActivity.findViewById(R.id.city);
+    	TextView stateTextView = (TextView)myProfileActivity.findViewById(R.id.state);
+    	TextView zipTextView = (TextView)myProfileActivity.findViewById(R.id.zipCode);
+    	TextView countryTextView = (TextView)myProfileActivity.findViewById(R.id.zipCode);
+
+    	TextView passwordTextView = (TextView)myProfileActivity.findViewById(R.id.password);
+    	TextView emailTextView = (TextView)myProfileActivity.findViewById(R.id.email);
+    	TextView phoneTextView = (TextView)myProfileActivity.findViewById(R.id.phone);
+    	
+	    
+        final Button button2 = (Button) findViewById(R.id.updateButton);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            
+            	TextView passwordTextView = (TextView)myProfileActivity.findViewById(R.id.password);
+            	TextView emailTextView = (TextView)myProfileActivity.findViewById(R.id.email);
+            	TextView phoneTextView = (TextView)myProfileActivity.findViewById(R.id.phone);
+
+            	//Call API to register
+            	String userIdAndsessionId = RESTData.registerUser(
+            			emailTextView.getText().toString(),
+            			passwordTextView.getText().toString(),
+            			phoneTextView.getText().toString());
+
+            	if(userIdAndsessionId != null) {
+            		//If success, Insert username and session Id in db
+            		String[] data = userIdAndsessionId.split(",");
+            		new DBSession(myProfileActivity).insertIntoDB(data[0], data[1], emailTextView.getText().toString(), emailTextView.getText().toString());
+            	
+            		//Go to Sell a Spot main tabbed screen
+            		Intent intent = new Intent(myProfileActivity, MainActivity.class);
+            		myProfileActivity.startActivity(intent);
+            		finish();
+            } else {
+    			//If register fails go to login page
+    			Intent intent2 = new Intent(myProfileActivity, LoginActivity.class);
+    			myProfileActivity.startActivity(intent2);
+    			finish();
+            }
+            }
+        });
+        
+	}
+
+}

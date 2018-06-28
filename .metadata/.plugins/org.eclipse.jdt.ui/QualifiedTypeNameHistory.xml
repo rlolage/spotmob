@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.sellaspot.datamodel.UserDetailResponse"/>
+<fullyQualifiedTypeName name="com.sellaspot.R.drawable"/>
+<fullyQualifiedTypeName name="com.sellaspot.MyProfileActivity"/>
+<fullyQualifiedTypeName name="com.sellaspot.datamodel.UpdateUserRequest"/>
+<fullyQualifiedTypeName name="com.sellaspot.datamodel.UpdateUserResponse"/>
+<fullyQualifiedTypeName name="com.sellaspot.datamodel.RESTData"/>
+<fullyQualifiedTypeName name="android.widget.CheckBox"/>
+<fullyQualifiedTypeName name="com.sellaspot.MyItemsFragment.MySpotsLoader"/>
+<fullyQualifiedTypeName name="com.sellaspot.NetworkConnection"/>
+<fullyQualifiedTypeName name="com.sellaspot.MainActivity"/>
+</qualifiedTypeNameHistroy>

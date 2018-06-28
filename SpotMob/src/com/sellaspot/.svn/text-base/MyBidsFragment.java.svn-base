@@ -1,0 +1,238 @@
+package com.sellaspot;
+
+import java.util.ArrayList;
+
+import android.app.Dialog;
+import android.app.ListFragment;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.sellaspot.datamodel.Bid;
+import com.sellaspot.datamodel.Item;
+import com.sellaspot.datamodel.RESTData;
+import com.sellaspot.db.DBSession;
+
+public class MyBidsFragment extends ListFragment {
+ 
+	private ArrayList<Bid> bids = new ArrayList<Bid>();
+	private ArrayList<Item> items = new ArrayList<Item>();
+	
+	private BidAdapter bidAdapter;
+
+	private String userId;
+	private String sessionId;
+	private String bidId;
+	private int itemId;
+	private Item item;
+	private Bid bid;
+	
+	private MyBidsFragment fragment;
+	private DBSession dbSession;
+	
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.my_bids_layout, container, false);
+    }
+    
+    
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+    
+    	super.onActivityCreated(savedInstanceState);
+    	StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+    	StrictMode.setThreadPolicy(policy);
+    	
+    	fragment = this;
+		
+		new LoadData().execute();
+		
+		this.bidAdapter = new BidAdapter(this.getActivity().getApplicationContext(), R.layout.my_bids_list_row, bids);
+		setListAdapter(this.bidAdapter);
+		
+    }
+ 
+    
+	private class BidAdapter extends ArrayAdapter<Bid> {
+
+		private ArrayList<Bid> bids;
+
+		public BidAdapter(Context context, int textViewResourceId,
+				ArrayList<Bid> bids) {
+			super(context, textViewResourceId, bids);
+			this.bids = bids;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View v = convertView;
+			if (v == null) {
+				LayoutInflater vi = (LayoutInflater)this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+				v = vi.inflate(R.layout.my_bids_list_row, null);
+			}
+			Bid bid = bids.get(position);
+			Item item = items.get(position);
+			String bidStatus = "";
+			
+			if (bid != null) {
+				
+				TextView tt = (TextView) v.findViewById(R.id.toptext);
+				TextView bt = (TextView) v.findViewById(R.id.bottomtext);
+				TextView bidsText = (TextView) v.findViewById(R.id.bidsText);
+				TextView timeLeftText = (TextView) v.findViewById(R.id.timeLeftText);
+				ImageView imgView = (ImageView)v.findViewById(R.id.icon);
+				
+				if (tt != null) {
+					tt.setText(item.getItemdescription());
+				}
+				if (bt != null) {
+					bt.setText("You are  " + bid.getBidusertype() + " for this item");
+				}
+
+				if (bidsText != null && timeLeftText != null) {
+					
+					if(bid.getAccepted() != null && bid.getAccepted().equalsIgnoreCase("false")) {
+						//bidStatus = "Bid status";
+						imgView.setBackgroundResource(R.drawable.ic_action_show);
+					}
+					else {
+						//bidStatus = "Bid Status";
+						imgView.setBackgroundResource(R.drawable.ic_action_like);
+
+					}
+					bidsText.setText("You bid $" + bid.getBidprice());
+					timeLeftText.setText(bidStatus);
+				}
+			}
+			return v;
+		}
+	}
+
+	@Override
+	public void onListItemClick(ListView lv, View v, int position, long id) {
+
+    	final Dialog dialog = new Dialog(this.getActivity());
+		dialog.setContentView(R.layout.bid_status);
+		
+		dialog.setTitle("Your Bid Status");
+
+		final TextView itemDescriptionTxtView = (TextView)dialog.findViewById(R.id.itemDescription);
+		final TextView bidStatusTxtView = (TextView)dialog.findViewById(R.id.bidStatus);
+		
+		bidId = String.valueOf(bids.get(position).getBidid());
+		
+		DBSession session = new DBSession(this.getActivity());
+		
+		this.userId = session.getUserId();
+		this.sessionId = session.getSessionId();
+		
+		bid = RESTData.getBidById(bidId, userId, sessionId);
+		item = RESTData.getSpotById("" + bid.getItemid(), userId, sessionId);
+		itemId = item.getItemid();
+		
+		String bidText = item.getItemdescription();
+		String bidStatus = "";
+		if(bid.getAccepted().equalsIgnoreCase("false")) {
+			bidStatus = "not accepted yet";
+		}
+		else {
+			bidStatus = "accepted";
+			final TextView phoneNumberTxtView = (TextView)dialog.findViewById(R.id.phoneNumberTextView);
+			phoneNumberTxtView.setText("Please call XXX-XXX-XXXX to proceed");
+		}
+		
+		String bidStatusText = "Your bid is " +  bidStatus; 
+		
+		if(bidStatus.equalsIgnoreCase("Accepted")) {
+			//Show him to rate the user
+			//LinearLayout myLayout = (LinearLayout)dialog.findViewById(R.id.hiddenLayout);
+			//View hiddenInfo = dialog.getLayoutInflater().inflate(R.layout.hidden, myLayout, false);
+			//myLayout.addView(hiddenInfo);
+		}
+		itemDescriptionTxtView.setText(bidText);
+		bidStatusTxtView.setText(bidStatusText);		
+//		Button spotItButton = (Button) dialog.findViewById(R.id.bidButton);
+//		// if button is clicked, close the custom dialog
+//		spotItButton.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				dialog.dismiss();
+//			}
+//		});
+
+		dialog.show();
+
+
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+	}
+	
+	public class LoadData extends AsyncTask<Void, Void, Void> {
+	    
+		ProgressDialog progressDialog;
+	    
+	    //declare other objects as per your need
+	    @Override
+	    protected void onPreExecute()
+	    {
+	        progressDialog = ProgressDialog.show(fragment.getActivity(), "Loading", "Getting bids placed by you", true);
+
+	        //do initialization of required objects objects here                
+	    };      
+	    @Override
+	    protected Void doInBackground(Void... params)
+	    {   
+			DBSession session = new DBSession(fragment.getActivity().getApplicationContext());
+			dbSession = session;
+			
+			bids = (ArrayList<Bid>) RESTData.getMyBids(session.getUserId(), session.getSessionId());
+			
+			if(bids != null) {
+				
+				for(Bid bid : bids) {
+					Item item = RESTData.getSpotById("" + bid.getItemid(), dbSession.getUserId(), dbSession.getSessionId());
+					items.add(item);
+				}
+			}
+			
+			//Log.d("BIDS", bids.toString());
+
+	         //do loading operation here  
+	        return null;
+	    }       
+	    @Override
+	    protected void onPostExecute(Void result)
+	    {
+	        super.onPostExecute(result);
+			
+			if (bids != null && bids.size() > 0) {
+				bidAdapter.clear();
+				bidAdapter.notifyDataSetChanged();
+				for (int i = 0; i < bids.size(); i++)
+					bidAdapter.add(bids.get(i));
+			}
+			// progressDialog.dismiss();
+			bidAdapter.notifyDataSetChanged();	
+			
+	        progressDialog.dismiss();
+	    };
+	 }
+}

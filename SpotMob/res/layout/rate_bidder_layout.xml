@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ececec"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/bidderRatingLabelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate Buyer"
+                android:textAppearance="?android:attr/textAppearanceSmall" 
+         android:textColor="#00baff"
+                android:textStyle="bold"                  />
+
+            <RatingBar
+                android:id="@+id/userRatingBar"
+                style="@style/userRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1.0" />
+
+            <EditText
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Comments"
+                android:inputType="textMultiLine" 
+                           android:layout_margin="4dip"
+            android:background="@drawable/gradient_edit_text"
+                >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/messageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0000" />
+
+            <Button
+                android:id="@+id/rateUserButton"
+                style="@style/ButtonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_selector"
+                android:onClick="rateUser"
+                android:text="Rate Buyer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" 
+            android:padding="10dip"
+            android:layout_margin="10dip"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:id="@+id/secondTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Options" 
+               	android:textAppearance="?android:attr/textAppearanceSmall" 
+         android:textColor="#00baff"
+                android:textStyle="bold"  
+                                android:layout_margin="3dip"
+                />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If you feel you don't want to deal with this buyer, you can cancel his bid" />
+
+            <Button
+                android:id="@+id/cancelBidButton"
+                style="@style/ButtonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_selector"
+                android:onClick="cancelBid"
+                android:text="Cancel Bid" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
